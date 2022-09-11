@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PVP simple Game!</title>
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+ </head>
+ <body>
+
+    <div class="landscape-trigger">
+        <h1>Rotate your phone!</h1>
+    </div>
+
+     <div id="choose-equipment">
+         <h2 class="judul">game lawanan</h2>
+         <br>
+        <div class="player">
+
+            <div class="player-1">
+               <input id="name-p1" placeholder="player 1"></input>
+               <select id="dropDown-weapon-p1"></select>
+               <select id="dropDown-armor-p1"></select>
+        </div>
+        
+        <div class="player-2">
+            <input id="name-p2" placeholder="player 2"></input>
+            <select id="dropDown-weapon-p2"></select>
+            <select id="dropDown-armor-p2"></select>
+           </div>
+        </div>
+        <button id="btnOk">ok</button>
+        <span class="versus">VS</span>
+    </div>
+
+  <div class="container">
+   <div class="game-user-interface">
+    <!-- P1 -->
+    <div class="profile-p1">
+        <div class="name">
+            <h4 id="name-player1">P 1</h4>
+            <div class="box-hedef">
+                <span id="health-p1">100</span>
+                <span id="armor-p1">0</span>
+            </div>
+      <p class="damageP1 damage">halo</p>
+     </div>
+     <div class="hpb-p1 health-bar">
+      <div class="hp-1"></div>
+     </div>
+     <br />
+     <button id="attackBtn">attack</button>
+     <button id="defendBtn">defend</button>
+     <button id="healBtn">heal</button>
+    </div>
+
+    <!-- P2 -->
+    <div class="profile-p2">
+     <div class="name">
+      <h4 id="name-player2">P 2</h4>
+      <div class="box-hedef">
+                <span id="health-p2">100</span>
+                <span id="armor-p2">0</span>
+            </div>
+      <p class="damageP2 damage">halo</p>
+     </div>
+     <div class="hpb-p2 health-bar">
+      <div class="hp-2"></div>
+     </div>
+     <br />
+     <button id="attackBtn2">attack</button>
+     <button id="defendBtn2">defend</button>
+     <button id="healBtn2">heal</button>
+    </div>
+   </div>
+  </div>
+ </body>
+
+ <script src="script.js"></script>
+</html>

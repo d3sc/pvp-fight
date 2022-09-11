@@ -1,0 +1,204 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body {
+ overflow: hidden;
+}
+
+.judul {
+ text-align: center;
+}
+
+#choose-equipment {
+ width: 400px;
+ height: fit-content;
+ background-color: #555;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ padding: 30px 20px;
+ border-radius: 10px;
+}
+.player {
+ width: 100%;
+ height: fit-content;
+ display: flex;
+ justify-content: space-between;
+ /* flex-wrap: wrap; */
+}
+
+.player-1 {
+ display: grid;
+ gap: 10px;
+}
+
+.player-2 {
+ display: grid;
+ gap: 10px;
+}
+
+.versus {
+ z-index: 100;
+ position: absolute;
+ top: 45%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+#btnOk {
+ margin-top: 20px;
+ margin-left: 20px;
+ height: 30px;
+ width: 40px;
+}
+
+.container {
+ width: 100%;
+ height: 100vh;
+ /* border: 4px dotted black; */
+}
+
+.game-user-interface {
+ width: 100%;
+ height: 100vh;
+ display: flex;
+ justify-content: space-between;
+}
+
+/* P1 */
+.profile-p1 {
+ width: fit-content;
+ margin: 20px 30px;
+}
+
+.hpb-p1 {
+ position: relative;
+ background-color: white;
+ z-index: 10;
+ width: 150px;
+ height: 20px;
+ border: 1px solid black;
+}
+
+.hpb-p1 div.hp-1 {
+ position: relative;
+ top: -1px;
+ z-index: 10;
+ background-color: black;
+ width: var(--hp-p1);
+ height: 20px;
+}
+
+/* P2 */
+.profile-p2 {
+ width: fit-content;
+ margin: 20px 30px;
+}
+
+.hpb-p2 {
+ position: relative;
+ background-color: white;
+ z-index: 10;
+ width: 150px;
+ height: 20px;
+ border: 1px solid black;
+}
+
+.hpb-p2 div.hp-2 {
+ position: relative;
+ z-index: 10;
+ background-color: black;
+ width: var(--hp-p2);
+ height: 19px;
+}
+
+.name {
+ display: grid;
+}
+.name .damage {
+ position: relative;
+ top: 0px;
+ color: red;
+ z-index: 1;
+ margin-left: 80px;
+ opacity: 0;
+}
+
+#armor-p1 {
+ margin-left: 10px;
+ color: #555;
+}
+#armor-p2 {
+ margin-left: 10px;
+ color: #555;
+}
+
+@keyframes up {
+ 0% {
+  top: 20px;
+  opacity: 0;
+ }
+ 60% {
+  opacity: 1;
+ }
+ 100% {
+  opacity: 1;
+  top: -15px;
+  opacity: 0;
+ }
+}
+
+.landscape-trigger {
+ display: none;
+ z-index: 9999;
+ width: 100%;
+ height: 100vh;
+ background-color: red;
+ position: absolute;
+ overflow: hidden;
+}
+
+.landscape-trigger h1 {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+@media (min-height: 380px) {
+ .landscape-trigger {
+  display: block;
+ }
+ .player {
+  flex-wrap: wrap;
+ }
+ .landscape-trigger {
+  max-width: 100%;
+  width: 100vw;
+ }
+ #choose-equipment {
+  width: 350px;
+ }
+}
+
+@media (min-height: 635px) {
+ .landscape-trigger {
+  display: none;
+ }
+}
+
+@media (min-width: 550px) {
+ #choose-equipment {
+  width: 80%;
+  display: block;
+ }
+}
+
+@media (min-width: 880px) {
+ #choose-equipment {
+  width: 400px;
+ }
+}
