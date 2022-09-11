@@ -10,10 +10,6 @@ const name_p2 = document.getElementById("name-p2");
 
 game_user_interface.style.display = "none";
 
-// Player name
-// console.log(name_p1_value);
-// console.log(name_p2_value);
-
 let weapon = {
  default: 0,
  piso: 7,
@@ -77,7 +73,6 @@ class Player {
    this.health = 0;
    return alert(this.name + " already lose!");
   }
-  //   if (Math.floor(Math.random() * 5 + 1) % 2 == 1) return "Failed Defend!";
   this.armor += Math.floor(Math.random() * 10 + 1);
   return "Success Defend";
  }
@@ -122,9 +117,6 @@ class Player {
  }
 }
 
-// Menginitialisasi class Player
-// let player1 = new Player(name_p1_null, 100, weapon.default, armor.default);
-// let player2 = new Player(name_p2_null, 100, weapon.default, armor.default);
 let player1 = new Player("", 100, weapon.default, armor.default);
 let player2 = new Player("", 100, weapon.default, armor.default);
 
@@ -145,18 +137,15 @@ function checkName(name_p1_value, name_p2_value) {
  }
 }
 
-// membuat function status player, untuk menampilkan status player
 function statusPlayer() {
  console.log(player1);
  console.log(player2);
 }
 
-// mengambil data key dari object weapon dan armor
 let keys_weapon = Object.keys(weapon);
 let keys_armor = Object.keys(armor);
 
 function choose_item_handler_p1(keys_weapon, keys_armor) {
- // membuat isi dari dropdown pada senjata
  keys_weapon.forEach((i) => {
   let newOption = document.createElement("option");
   let isiNewOption = document.createTextNode(i);
@@ -165,7 +154,6 @@ function choose_item_handler_p1(keys_weapon, keys_armor) {
   drop_down_weapon_p1.appendChild(newOption);
  });
 
- // membuat isi dari dropdown pada armor
  keys_armor.forEach((i) => {
   let newOption = document.createElement("option");
   let isiNewOption = document.createTextNode(i);
@@ -175,7 +163,6 @@ function choose_item_handler_p1(keys_weapon, keys_armor) {
  });
 }
 function choose_item_handler_p2(keys_weapon, keys_armor) {
- // membuat isi dari dropdown pada senjata
  keys_weapon.forEach((i) => {
   let newOption = document.createElement("option");
   let isiNewOption = document.createTextNode(i);
@@ -184,7 +171,6 @@ function choose_item_handler_p2(keys_weapon, keys_armor) {
   drop_down_weapon_p2.appendChild(newOption);
  });
 
- // membuat isi dari dropdown pada armor
  keys_armor.forEach((i) => {
   let newOption = document.createElement("option");
   let isiNewOption = document.createTextNode(i);
@@ -196,7 +182,6 @@ function choose_item_handler_p2(keys_weapon, keys_armor) {
 choose_item_handler_p1(keys_weapon, keys_armor);
 choose_item_handler_p2(keys_weapon, keys_armor);
 
-// Membuat data ke dalam localstorage
 function create_data_equipment(
  weapon_val_p1,
  armor_val_p1,
@@ -231,7 +216,6 @@ function updateStatusPlayer(
  )
   return "update equipment error!";
 
- // Mengupdate data ke status player
  player1.update_equipment_weapon(weapon[equipment_weapon_p1]);
  player1.update_equipment_armor(armor[equipment_armor_p1]);
  player2.update_equipment_weapon(weapon[equipment_weapon_p2]);
@@ -251,7 +235,6 @@ btnOk.addEventListener("click", () => {
  name_player2.textContent = player2.name;
 
  randomChange();
- //  resetGame();
  let weapon_val_p1 = drop_down_weapon_p1.value;
  let armor_val_p1 = drop_down_armor_p1.value;
  let weapon_val_p2 = drop_down_weapon_p2.value;
@@ -302,14 +285,6 @@ const health_p2 = document.getElementById("health-p2");
 const armor_p1 = document.getElementById("armor-p1");
 const armor_p2 = document.getElementById("armor-p2");
 
-// if (player1.armor == 0 || player2.armor == 0) {
-//  armor_p1.style.display = "none";
-//  armor_p2.style.display = "none";
-// } else {
-//  armor_p1.style.display = "block";
-//  armor_p2.style.display = "block";
-// }
-
 function get_damage(value) {
  return value;
 }
@@ -338,9 +313,6 @@ function randomChange() {
   return randomNum++;
  }
 }
-
-//TODO task : menggandakan listener
-// function create_attack_button_listener(btn_name, player_name, fungsi) {}
 
 attackBtn.addEventListener("click", () => {
  randomChange();
